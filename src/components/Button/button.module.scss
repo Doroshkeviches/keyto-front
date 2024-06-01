@@ -1,0 +1,26 @@
+@import 'src/index.scss';
+
+.button {
+    font-size: 18px;
+    background-color: transparent;
+    color: $color-light;
+    outline: none;
+    text-decoration: none;
+    border-style: none;
+    cursor: pointer;
+}
+
+.container:hover {
+    cursor: pointer;
+    scale: 1.1;
+    transition: all 250ms ease;
+}
+
+.container {
+    @include font-style;
+    border-radius: 3px;
+    background-color: $color-dark ;
+    padding: 15px 0px;
+    text-align: center;
+    width: 100%;
+}

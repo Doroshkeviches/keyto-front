@@ -1,0 +1,22 @@
+@import 'src/index.scss';
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+
+.formContainer{
+    width: 100%;
+}
+.input {
+    border-radius: 16px;
+}
+
+.forgotPassword {
+    width: 100%;
+    text-align: end;
+}

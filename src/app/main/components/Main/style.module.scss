@@ -1,0 +1,70 @@
+@import 'src/index';
+
+.date {
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    gap: 100px;
+    position: relative;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.line {
+    transform: rotate(90);
+    border: 1px solid #B2ACAA
+}
+
+.matchContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    max-width: 1000px;
+}
+
+.selectedContainer {
+    width: 100%;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    top: 100px;
+    left: 0px;
+    z-index: 2;
+}
+
+.batePickerWrapper {
+    width: 100%;
+    padding: 44px;
+    background-color: rgba(222, 222, 218, 1);
+    border-radius: 30px;
+
+}
+
+.button {
+    background-color: rgba(222, 222, 218, 1);
+    padding: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    border-radius: 16px;
+    width: 50%;
+}
+.errorInputWrapper{
+    width: 450px;
+}
+.buttonContainer{
+    width: 100%;
+    max-width: 450px;
+}

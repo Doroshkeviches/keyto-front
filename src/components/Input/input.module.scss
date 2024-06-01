@@ -1,0 +1,52 @@
+@import 'src/index.scss';
+
+.input {
+    width: 100%;
+    padding: 15px 30px;
+    border-radius: 10px;
+    border: 1px solid #EBE4E4;
+    color: $color-dark;
+    font-family: 'Montserrat';
+
+}
+
+.icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translate(0, -50%);
+    cursor: pointer;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    background-color: transparent
+}
+
+.error {
+    @include font-style;
+    text-align: end;
+    font-size: 14px;
+    color: red
+}
+.date{
+    width: 100%;
+    padding: 15px 30px;
+    border-radius: 10px;
+    border: 1px solid #000000;
+    color: $color-dark;
+    font-family: 'Montserrat';
+    box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.25);
+
+}
+.date * {
+    outline: none;
+    border: none !important;
+}
+.label{
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}

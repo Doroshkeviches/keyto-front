@@ -1,0 +1,14 @@
+@import 'src/index.scss';
+
+.title {
+    @include font-size-32-dark;
+    text-align: center;
+    margin-bottom: 24px;
+}
+.text {
+    @include font-size-16-dark;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 24px;
+}

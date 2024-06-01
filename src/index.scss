@@ -1,0 +1,130 @@
+@import './fonts.scss';
+
+// FONT
+
+@mixin font-style {
+  font-family: 'Montserrat';
+  color: $color-dark;
+  font-size: 16px;
+}
+
+
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+//COLORS
+$color-dark: #000000;
+$color-light: #F5F3EF;
+
+
+
+body {
+  @include font-style;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a {
+  text-decoration: none;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article>*+* {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// GLOBAL STYLE
+.error {
+  @include font-style;
+  text-align: end;
+  font-size: 14px;
+  color: red
+}
+
+@mixin font-size-32-dark {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+
+@mixin font-size-48-dark {
+  font-size: 48px;
+  font-weight: 600;
+}
+@mixin font-size-64-dark {
+  font-size: 64px;
+  font-weight: 600;
+}
+@mixin font-size-112-dark {
+  font-size: 112px;
+  font-weight: 600;
+}
+@mixin font-size-16-dark {
+  font-size: 16px;
+  font-weight: 500;
+}
+@mixin font-size-24-dark {
+  font-size: 24px;
+  font-weight: 500;
+}
+.title {
+  @include font-size-32-dark;
+  text-align: center;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+.text {
+  @include font-size-16-dark;
+  width: 80%;
+  text-align: left;
+  margin: 0 auto;
+  margin-bottom: 24px;
+}
+.dataContainer {
+  background-color: rgba(241, 241, 236, 1);
+  border-radius: 30px;
+  padding: 60px 150px;
+}

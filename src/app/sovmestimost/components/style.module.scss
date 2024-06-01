@@ -1,0 +1,19 @@
+@import 'src/index.scss';
+
+.container {
+    padding: 50px;
+}
+
+.bigSvg {
+    margin-bottom: 50px;
+}
+
+.dateContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 555px;
+    margin: 0 auto;
+    @include font-size-32-dark;
+    font-size: 30px;
+}

@@ -1,0 +1,68 @@
+@import 'src/index.scss';
+
+.strongTitle {
+    padding: 24px 36px;
+    background-color: black;
+    border-radius: 24px;
+    width: 60%;
+    margin: 0 auto;
+    color: white;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.card {
+    @include font-size-16-dark;
+    display: flex;
+    flex-direction: column;
+    outline: 2px solid $color-dark;
+    border-radius: 16px;
+    justify-content: flex-start;
+
+    .cardHeader {
+        text-transform: uppercase;
+        border-radius: 12px;
+        padding: 8px;
+        text-align: center;
+        width: 100%;
+        color: white;
+        background-color: $color-dark;
+    }
+
+    .strong {
+        padding: 8px;
+        width: 100%;
+        text-align: center;
+    }
+
+}
+
+.cardContainer {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 24px;
+    margin: 0 auto;
+    width: 80%;
+    margin-bottom: 36px;
+}
+
+.actionsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    width: 60%;
+    margin: 0 auto;
+    @include font-size-24-dark;
+
+}
+
+.actItem {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+}
