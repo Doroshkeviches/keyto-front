@@ -6,8 +6,10 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 24px;
-    max-width: 1000px;
-    width: 60%;
+    @media (max-width: 768px) {
+        flex-direction: column;
+    
+      }
 }
 
 .trueCard {
@@ -23,7 +25,12 @@
     outline: 2px solid black;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    max-width: 45%;
+    max-width: calc(50% - 12px);
+    @media (max-width: 768px) {
+        max-width: 100%;
+
+    
+      }
 }
 
 .side {
@@ -39,6 +46,11 @@
 .sideTitle {
     text-align: center;
     font-weight: 500;
+    @media (max-width: 768px) {
+        font-size: 12px;
+
+    
+      }
 }
 
 .sideNumber {
@@ -53,12 +65,15 @@
     height: 150px;
     scroll-padding: 13px;
     margin: 20px 0px;
+    @media (max-width: 768px) {
+        margin: 5px 0px;
+      }
 }
 
 .layout {
     display: flex;
     align-items: center;
-    width: 100%;
+    // width: 100%;
     justify-content: center;
     flex-direction: column;
 }
@@ -69,7 +84,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
+    @include font-size-24-dark;
 }
 
 .activeBoardItem {
@@ -146,7 +161,7 @@
     display: grid;
     grid-template-columns: 2fr 1fr;
     margin-bottom: 50px;
-    width: 80%;
+    gap: 76px;
 
     @media (max-width: 1024px) {
         grid-template-columns: 1fr;

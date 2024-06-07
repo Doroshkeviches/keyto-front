@@ -94,37 +94,95 @@ select {
   font-size: 48px;
   font-weight: 600;
 }
+
 @mixin font-size-64-dark {
   font-size: 64px;
   font-weight: 600;
 }
+
 @mixin font-size-112-dark {
   font-size: 112px;
   font-weight: 600;
 }
+
 @mixin font-size-16-dark {
   font-size: 16px;
   font-weight: 500;
 }
+
 @mixin font-size-24-dark {
   font-size: 24px;
   font-weight: 500;
 }
+
 .title {
   @include font-size-32-dark;
   text-align: center;
   margin-bottom: 24px;
   text-transform: uppercase;
+
+  @media (max-width: 1024px) {
+    font-size: 30px;
+
+  }
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+
+  }
 }
+
 .text {
   @include font-size-16-dark;
-  width: 80%;
+  width: 100%;
   text-align: left;
   margin: 0 auto;
   margin-bottom: 24px;
+  line-height: 16px;
+
+  @media (max-width: 1024px) {
+    font-size: 14px;
+
+  }
+  @media (max-width: 768px) {
+    font-size: 10px;
+
+  }
+
 }
+
 .dataContainer {
   background-color: rgba(241, 241, 236, 1);
   border-radius: 30px;
   padding: 60px 150px;
+
+
+}
+
+.blockContainer {
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 58px;
+
+  @media (max-width: 1440px) {
+    width: 70%;
+
+  }
+
+  @media (max-width: 768px) {
+    width: 90%;
+
+  }
+}
+
+.code {
+  font-size: 240px;
+  line-height: 247px;
+  text-align: center;
+  font-weight: 700;
+
+  @media (max-width: 768px) {
+    font-size: 114px;
+    line-height: 115px;
+  }
 }

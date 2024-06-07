@@ -7,6 +7,8 @@ import Mission from './Mission/Mission';
 import Implementation from './Implementation/Implementation';
 import Matrix from './Matrix/Matrix';
 import sumDigits, { sumOneDigits } from 'app/main/components/Main/helper';
+import PersonalCode from './PersonalCode/PersonalCode';
+import Polniy_Razbor from 'assets/BigSVG/Polniy_Razbor';
 
 const componentsSections = new Map<any, any>([
     ["conscious", Conscious],
@@ -42,11 +44,15 @@ export default function PersonalPage() {
     }
     const implementationNumber = sumDigits(missionNumb, sumOfDays, 0)
     return (
-        <div className={s.container}>
-            <Conscious {...data[0].data[sumOfDays]} />
-            <Mission number={missionNumb} {...data[1].data[missionNumb]} />
-            <Implementation number={implementationNumber} {...data[2].data[implementationNumber]} />
-            <Matrix {...data[4].data[1]} dateNumbers={day.toString() + month.toString() + year.toString()} />
+        <div className={s.globalContainer}>
+            <Polniy_Razbor/>
+            <div className={s.container}>
+                <PersonalCode code={sumOfDays.toString() + missionNumb.toString() + implementationNumber.toString()} />
+                <Conscious {...data[0].data[sumOfDays]} />
+                <Mission number={missionNumb} {...data[1].data[missionNumb]} />
+                <Implementation number={implementationNumber} {...data[2].data[implementationNumber]} />
+                <Matrix {...data[4].data[1]} dateNumbers={day.toString() + month.toString() + year.toString()} />
+            </div>
         </div>
     )
 }

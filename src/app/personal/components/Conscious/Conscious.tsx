@@ -6,6 +6,7 @@ import ArrowRight from 'assets/icons/ArrowRight'
 import ArrowTop from 'assets/icons/ArrowTop'
 import ArrowLeft from 'assets/icons/ArrowLeft'
 import { sumOneDigits } from 'app/main/components/Main/helper'
+import clsx from 'clsx'
 export default function Conscious(props: IConscious) {
     const { numbersText, importantText, planet,
         energetika,
@@ -22,13 +23,15 @@ export default function Conscious(props: IConscious) {
     const consciousDay = new Date(+param).getDate()
     const id = sumOneDigits(consciousDay)
     return (
-        <>
-            <div className='title'>Ваше Число Сознания - {id}</div>
-            <p className='text'>{numbersText}</p>
-            <div className={s.importantTextContainer}>
+        <div className={s.container}>
+            <div className={s.container50}>
+                <div className='title'>Ваше Число Сознания - {id}</div>
+                <p className='text'>{numbersText}</p>
+            </div>
+            <div className={clsx(s.importantTextContainer, s.container50)}>
                 <p className={s.importantText}>{importantText}</p>
             </div>
-            <div className={s.cardContainer}>
+            <div className={clsx(s.container50, s.cardContainer)}>
                 <div className={s.card}>
                     <div className={s.planetHeader}>
                         Планета
@@ -66,11 +69,11 @@ export default function Conscious(props: IConscious) {
                     <p className={s.planet}>{theme}</p>
                 </div>
             </div>
-            <p className='title'>ЦИКЛ РАЗВИТИЯ ВАШЕГО СОЗНАНИЯ:</p>
-            <div className={s.circleNumbers}>
+            <p className={clsx('title', s.container50)}>ЦИКЛ РАЗВИТИЯ ВАШЕГО СОЗНАНИЯ:</p>
+            <div className={clsx(s.circleNumbers, s.container50)}>
                 {circleNumbers[0].number}-{circleNumbers[1].number}-{circleNumbers[2].number}
             </div>
-            <div className={s.desctopCircle}>
+            <div className={clsx(s.container50,s.desctopCircle)}>
                 <div className={s.circleTopContainer}>
                     <div className={s.circleItem}>
                         <div className={s.number}>{circleNumbers[0].number}</div>
@@ -82,7 +85,10 @@ export default function Conscious(props: IConscious) {
                         <div>{circleNumbers[1].description}</div>
                     </div>
                 </div>
-                <div className={s.circleBottomContainer}>
+                <div style={{
+                    width: '80%',
+                    margin: '0 auto'
+                }} className={s.circleBottomContainer}>
                     <ArrowTop />
                     <div className={s.circleItem} style={{
                         marginTop: 32
@@ -93,7 +99,7 @@ export default function Conscious(props: IConscious) {
                     <ArrowLeft />
                 </div>
             </div>
-            <div className={s.mobileCircle}>
+            <div className={clsx(s.container50,s.mobileCircle)}>
                 {circleNumbers.map((it) => {
                     return (
                         <>
@@ -105,34 +111,34 @@ export default function Conscious(props: IConscious) {
                     )
                 })}
             </div>
-            <div className='text'>
+            <div className={clsx(s.container50,'text',s.mb50)}>
                 {circleText}
             </div>
             <p className='title'>КАРМИЧЕСКИЕ ЗАДАЧИ:</p>
-            <div className={s.tasksContainer}>
+            <div className={clsx(s.container50,s.tasksContainer)}>
                 {tasks.map((it) => {
                     return (
                         <div className={s.circleItem}>
                             <div className={s.number}>{it.number}</div>
-                            <div>{it.string}</div>
+                            <div className={s.descriptionTasks}>{it.string}</div>
                         </div>
                     )
                 })}
             </div>
-            <div className={s.positiveNegativeContainer}>
+            <div className={clsx(s.container70,s.positiveNegativeContainer)}>
                 <div className={s.card}>
-                    <div className={s.planetHeader}>
+                    <div className={clsx(s.planetHeader, s.bigCard)}>
                         Позитивные качества
                     </div>
-                    <p className={s.planet}>{positive}</p>
+                    <p className={clsx(s.planet, s.bigCardPlanet)}>{positive}</p>
                 </div>
                 <div className={s.card}>
-                    <div className={s.planetHeader}>
+                    <div className={clsx(s.planetHeader, s.bigCard)}>
                         негативные качества
                     </div>
-                    <p className={s.planet}>{negative}</p>
+                    <p className={clsx(s.planet, s.bigCardPlanet)}>{negative}</p>
                 </div>
             </div>
-        </>
+        </div>
     )
 }

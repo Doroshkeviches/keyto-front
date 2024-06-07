@@ -2,23 +2,28 @@
 
 .numbersText {
     @include font-size-16-dark;
+
 }
 
 .importantTextContainer {
     @include font-size-16-dark;
     background-color: $color-dark;
-    margin: 0 100px;
+    width: 100%;
     border-radius: 16px;
     padding: 32px 16px;
     color: white;
     text-align: center;
+    @media (max-width: 1024px) {
+        text-align: left;
+
+    }
 }
 
 .card {
     @include font-size-16-dark;
     display: flex;
     flex-direction: column;
-    outline: 2px solid $color-dark;
+    box-shadow: 1px 1px 40px 0px rgba(84, 84, 84, 0.25);
     border-radius: 16px;
     justify-content: flex-start;
 
@@ -32,10 +37,31 @@
         background-color: $color-dark;
     }
 
+    .bigCard {
+        @include font-size-24-dark;
+        padding: 27px 45px;
+
+        @media (max-width: 1024px) {
+            @include font-size-16-dark;
+        }
+    }
+
+    .bigCardPlanet {
+        padding: 23px 32px !important;
+
+        @media (max-width: 1024px) {
+            font-size: 10px;
+        }
+    }
+
     .planet {
         padding: 8px;
         width: 100%;
         text-align: center;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
 }
@@ -49,6 +75,10 @@
     gap: 24px;
     margin: 0 150px;
     margin-bottom: 36px;
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+
+    }
 }
 
 .circleItem {
@@ -56,14 +86,19 @@
     color: white;
     border-radius: 16px;
     background-color: $color-dark;
-    padding: 16px;
+    padding: 16px 24px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 8px;
+    gap: 34px;
 
     .number {
-        @include font-size-32-dark;
+        @include font-size-64-dark;
+
+        @media (max-width: 1024px) {
+            font-size: 48px;
+
+        }
     }
 }
 
@@ -80,20 +115,80 @@
 }
 
 .mobileCircle {
-    @media (min-width: 1025px) {
+    @media (min-width: 767px) {
         display: none;
     }
 
     display: flex;
     flex-direction: column;
     gap: 14px;
-    margin-bottom: 32px;
+    margin-bottom: 32px !important;
 
 }
 
-.desctopCircle {
+.container50 {
+    width: 50%;
+    margin: 0 auto;
+
+    @media (max-width: 1440px) {
+        width: 70%;
+
+    }
+
     @media (max-width: 1024px) {
+        width: 80%;
+
+    }
+    @media (max-width: 768px) {
+        width: 100%;
+
+    }
+}
+
+.container70 {
+    width: 70%;
+    margin: 0 auto;
+
+    @media (max-width: 1440px) {
+        width: 90%;
+
+    }
+
+    @media (max-width: 1024px) {
+        width: 80%;
+
+    }
+    @media (max-width: 768px) {
+        width: 100%;
+
+    }
+}
+
+.container {
+    margin: 0 auto;
+    margin-bottom: 58px;
+}
+
+.mb50 {
+    margin-bottom: 50px;
+}
+
+.descriptionTasks {
+    @include font-size-24-dark;
+
+    @media (max-width: 1024px) {
+        font-size: 16px;
+
+    }
+}
+
+.desctopCircle {
+    @media (max-width: 767px) {
         display: none;
+    }
+
+    @media (max-width: 1024px) {
+        width: 100% !important;
     }
 
     margin-bottom: 32px;
@@ -115,24 +210,6 @@
 
 .circleNumbers {
     @include font-size-64-dark;
-    color: white;
-    text-shadow:
-        -0 -1px 1px #000000,
-        0 -1px 1px #000000,
-        -0 1px 1px #000000,
-        0 1px 1px #000000,
-        -1px -0 1px #000000,
-        1px -0 1px #000000,
-        -1px 0 1px #000000,
-        1px 0 1px #000000,
-        -1px -1px 1px #000000,
-        1px -1px 1px #000000,
-        -1px 1px 1px #000000,
-        1px 1px 1px #000000,
-        -1px -1px 1px #000000,
-        1px -1px 1px #000000,
-        -1px 1px 1px #000000,
-        1px 1px 1px #000000;
     text-align: center;
 }
 
@@ -159,4 +236,15 @@
     .card {
         width: 50%;
     }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+
+        .card {
+            width: 100%;
+        }
+    }
+
+
 }

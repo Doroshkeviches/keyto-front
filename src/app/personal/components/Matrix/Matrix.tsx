@@ -25,7 +25,7 @@ export default function Matrix(props: { list: any[], dateNumbers: string }) {
     }
     const matrixBoard = generateMatrixArray()
     return (
-        <div className={s.layout}>
+        <div className={clsx('blockContainer',s.layout)}>
             <div className={s.matrixHeader}>
                 <div className={s.textContainer}>
                     <p className='title' style={{
