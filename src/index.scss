@@ -144,6 +144,7 @@ select {
     font-size: 14px;
 
   }
+
   @media (max-width: 768px) {
     font-size: 10px;
 
@@ -156,6 +157,9 @@ select {
   border-radius: 30px;
   padding: 60px 150px;
 
+  @media (max-width: 768px) {
+    padding: 32px;
+  }
 
 }
 
@@ -184,5 +188,14 @@ select {
   @media (max-width: 768px) {
     font-size: 114px;
     line-height: 115px;
+  }
+}
+
+.date {
+  @include font-size-24-dark;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 10px;
   }
 }

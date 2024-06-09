@@ -2,18 +2,35 @@
 
 .container {
     padding: 50px;
+    @media (max-width: 768px) {
+        padding: 16px;
+    }
 }
 
 .bigSvg {
-    margin-bottom: 50px;
+    margin-bottom: 44px;
 }
 
 .dateContainer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 555px;
-    margin: 0 auto;
     @include font-size-32-dark;
     font-size: 30px;
+}
+.headerContainer{
+    width: fit-content;
+    margin:  0 auto;
+}
+.wrapper {
+    width: 50%;
+    margin: 0 auto;
+
+    @media (max-width: 1440px) {
+        width: 70%;
+    }
+
+    @media (max-width: 1024px) {
+        width: 100%;
+    }
 }

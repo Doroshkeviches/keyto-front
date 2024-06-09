@@ -65,22 +65,27 @@ export default function SovmestimostPage() {
         <RazborSovmestimostyLeft />
       </div>
       <div className='dataContainer'>
-        <div className={s.dateContainer}>
-          <div>
-            {date1Conv}
+        <div className={s.wrapper}>
+          <div className={s.headerContainer}>
+            <div className={s.dateContainer}>
+              <div className='date'>
+                {date1Conv}
+              </div>
+              <div className='date'>
+                {date2Conv}
+              </div>
+            </div>
+            <div className='title'>ВАШ КОД СОВМЕСТИМОСТИ</div>
           </div>
-          <div>
-            {date2Conv}
-          </div>
+          <p className='code'>{sumOfDays.toString() + missionNumb.toString() + implementationNumber.toString()}</p>
+          <Constious number={sumOfDays} {...data[0].data[sumOfDays]} />
+          <Mission number={missionNumb} {...data[1].data[missionNumb]} />
+          <Year number={personalYear} {...data[2].data[personalYear]} />
+          <Realization number={implementationNumber} {...data[3].data[implementationNumber]} />
+          <Itog number={itogNumber} {...data[4].data[itogNumber]} />
+          {/* <Implementation number={implementationNumber} {...data[2].data[implementationNumber]} /> */}
+          {/* <Matrix {...data[4].data[1]} dateNumbers={day.toString() + month.toString() + year.toString()} /> */}
         </div>
-        <div className='title'>ВАШ КОД СОВМЕСТИМОСТИ</div>
-        <Constious number={sumOfDays} {...data[0].data[sumOfDays]} />
-        <Mission number={missionNumb} {...data[1].data[missionNumb]} />
-        <Year number={personalYear} {...data[2].data[personalYear]} />
-        <Realization number={implementationNumber} {...data[3].data[implementationNumber]} />
-        <Itog number={itogNumber} {...data[4].data[itogNumber]} />
-        {/* <Implementation number={implementationNumber} {...data[2].data[implementationNumber]} /> */}
-        {/* <Matrix {...data[4].data[1]} dateNumbers={day.toString() + month.toString() + year.toString()} /> */}
       </div>
     </div>
   )

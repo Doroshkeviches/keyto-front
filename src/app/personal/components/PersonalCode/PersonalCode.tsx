@@ -11,8 +11,8 @@ export default function PersonalCode({ code }: { code: string }) {
     const date1Conv = dateConverter(date)
     return (
         <div className='blockContainer'>
-            <p className={s.textWrap}>{date1Conv}</p>
-            <p className={s.textWrap}>ВАШ ЛИЧНЫЙ КОД:</p>
+            <p className='date'>{date1Conv}</p>
+            <p className='date'>ВАШ ЛИЧНЫЙ КОД:</p>
             <p className='code'>{code}</p>
         </div>
     )

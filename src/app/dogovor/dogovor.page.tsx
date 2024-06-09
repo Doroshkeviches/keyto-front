@@ -7,6 +7,7 @@ import Conscious from './components/Conscious/Conscious';
 import s from './style.module.scss'
 import { getDogovorData } from 'api/dogovor';
 import Itog from './components/Itog/Itog';
+import Code from './components/Code/Code';
 
 
 
@@ -42,20 +43,28 @@ export default function Dogovor() {
     const implementationNumber = sumDigits(missionNumb, sumOfDays, 0)
     const personalYear = sumDigits(day + day2 + day3, month + month2 + month3, currentYear)
     const itogNumber = sumDigits(implementationNumber, missionNumb, sumOfDays)
+    const date1Conv = dateConverter(date)
+    const date2Conv = dateConverter(date2)
+    const date3Conv = dateConverter(date3)
     if (!data.length) {
         return <></>
     }
     return (
         <div className={s.container}>
-            <Conscious actionsTitle='Действия, которые помогают улучшить отношения в рамках договора:' componentTitle='ОБЩЕЕ Число Сознания' number={sumOfDays} {...data[0].data[sumOfDays]} />
-            <Conscious actionsTitle='Действия, которые ПРИНЕСУТ ВАМ ЛУЧШИЙ РЕЗУЛЬТАТ:' componentTitle='ОБЩЕЕ Число МИССИИ' number={missionNumb} {...data[1].data[sumOfDays]} />
-            <Conscious actionsTitle='Действия, которые помогут реализовать договор:' componentTitle='ОБЩЕЕ Число РЕАЛИЗАЦИИ' number={implementationNumber} {...data[2].data[sumOfDays]} />
-            <Itog  componentTitle='ОБЩЕЕ Число ИТОГА' number={implementationNumber} {...data[3].data[itogNumber]} />
+            <div className='dataContainer'>
+                <div className={s.wrapper}>
+                    <Code date1={date1Conv} date2={date2Conv} date3={date3Conv} code={sumOfDays.toString() + missionNumb.toString() + implementationNumber.toString()} />
+                    <Conscious actionsTitle='Действия, которые помогают улучшить отношения в рамках договора:' componentTitle='ОБЩЕЕ Число Сознания' number={sumOfDays} {...data[0].data[sumOfDays]} />
+                    <Conscious actionsTitle='Действия, которые ПРИНЕСУТ ВАМ ЛУЧШИЙ РЕЗУЛЬТАТ:' componentTitle='ОБЩЕЕ Число МИССИИ' number={missionNumb} {...data[1].data[sumOfDays]} />
+                    <Conscious actionsTitle='Действия, которые помогут реализовать договор:' componentTitle='ОБЩЕЕ Число РЕАЛИЗАЦИИ' number={implementationNumber} {...data[2].data[sumOfDays]} />
+                    <Itog componentTitle='ОБЩЕЕ Число ИТОГА' number={implementationNumber} {...data[3].data[itogNumber]} />
 
 
-            {/* <Mission number={missionNumb} {...data[1].data[missionNumb]} />
+                    {/* <Mission number={missionNumb} {...data[1].data[missionNumb]} />
             <Implementation number={implementationNumber} {...data[2].data[implementationNumber]} />
             <Matrix {...data[4].data[1]} dateNumbers={day.toString() + month.toString() + year.toString()} /> */}
+                </div>
+            </div>
         </div>
     )
 }
