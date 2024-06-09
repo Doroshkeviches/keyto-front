@@ -24,7 +24,7 @@ export default function InputDate(props: Props) {
                 yearPlaceholder='YYYY'
                 maxDate={new Date('01.01.2050')}
                 minDate={new Date('01.01.1900')}
-                format="d/M/y"
+                format="dd/MM/yyyy"
                 className={s.date}
                 clearIcon={null}
                 calendarIcon={null}
