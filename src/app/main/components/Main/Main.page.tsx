@@ -64,11 +64,23 @@ export default function Main() {
         navigate(`/dogovor?date1=${milisec1}&date2=${milisec2}&date3=${milisec3}`)
     }
     return (
-        <>
+        <div className={s.abs}>
+            <h1 className={s.title}>Выберите вид разбора</h1>
             <div className={s.container}>
+                <div className={clsx(s.button, selectedBlock === 'полный разбор' ? s.selected : '')} onClick={() => handleBlockChange('полный разбор')}>
+                    полный разбор
+                </div>
+                <div className={clsx(s.button, selectedBlock === 'разбор совместимости' ? s.selected : '')} onClick={() => handleBlockChange('разбор совместимости')}>
+                    разбор совместимости
+                </div>
+                <div className={clsx(s.button, selectedBlock === 'разбор договора' ? s.selected : '')} onClick={() => handleBlockChange('разбор договора')}>
+                    разбор договора
+                </div>
                 {selectedBlock === 'полный разбор' ?
                     <div className={clsx(s.batePickerWrapper, s.selectedContainer)}>
                         <DatePickerBlock title='Полный разбор' >
+                            <p className={s.desc}>Описание Ваших данностей и жизненного пути.Разбор матрицы и главные рекомендации.</p>
+
                             <div className={s.inputContainer}>
                                 <div className={s.errorInputWrapper}>
                                     <InputDate className={s.date} label='Дата рождения человека:' value={personalData} onChange={setPersonalData} />
@@ -79,17 +91,11 @@ export default function Main() {
                                 <Button text='Получить Разбор' onClick={handleSubmitPersonal} />
                             </div>
                         </DatePickerBlock>
-                        <Polniy_Razbor />
                     </div>
-                    :
-                    <div className={s.button} onClick={() => handleBlockChange('полный разбор')}>
-                        полный разбор
-                    </div>
-                }
-                {
-                    selectedBlock === 'разбор совместимости' ?
-                        <div onClick={() => handleBlockChange('разбор совместимости')} className={clsx(s.batePickerWrapper, s.selectedContainer)}>
+                    : selectedBlock === 'разбор совместимости' ?
+                        <div className={clsx(s.batePickerWrapper, s.selectedContainer)}>
                             <DatePickerBlock title='разбор совместимости' >
+                            <p className={s.desc}>Проверка общей энергии в паре или в группе людей.Главные рекомендации для вашей общей энергии.</p>
                                 <div className={s.inputContainer}>
                                     <div className={s.errorInputWrapper}>
                                         <InputDate className={s.date} label='Дата рождения человека:' value={sovmest1} onChange={setSovmest1} />
@@ -104,47 +110,38 @@ export default function Main() {
                                     <Button text='Получить Разбор' onClick={handleSubmitSovmestimost} />
                                 </div>
                             </DatePickerBlock>
-                            <Razbor_Sovmestimosty />
 
                         </div>
                         :
-                        <div className={s.button} onClick={() => handleBlockChange('разбор совместимости')}>
-                            разбор совместимости
-                        </div>
-                }
-                {
-                    selectedBlock === 'разбор договора' ?
-                        <div onClick={() => handleBlockChange('разбор договора')} className={clsx(s.batePickerWrapper, s.selectedContainer)}>
-                            <DatePickerBlock title='разбор договора' >
-                                <div className={s.inputContainer}>
-                                    <div className={s.errorInputWrapper}>
-                                        <InputDate className={s.date} label='Дата рождения человека:' value={dogovor1} onChange={setDogovor1} />
-                                        <div>{personalError}</div>
-                                    </div>
-                                    <div className={s.errorInputWrapper}>
-                                        <InputDate className={s.date} label='Дата рождения человека:' value={dogovor2} onChange={setDogovor2} />
-                                        <div>{personalError}</div>
-                                    </div>
-                                    <div className={s.errorInputWrapper}>
-                                        <InputDate className={s.date} label='Дата рождения человека:' value={dogovor3} onChange={setDogovor3} />
-                                        <div>{personalError}</div>
-                                    </div>
-                                </div>
-                                <div className={s.buttonContainer}>
-                                    <Button text='Получить Разбор' onClick={handleSubmitDogovor} />
-                                </div>
-                            </DatePickerBlock>
-                            <Razbor_Dogovora />
-                        </div>
-                        :
-                        <div className={s.button} onClick={() => handleBlockChange('разбор договора')}>
-                            разбор договора
-                        </div>
-                }
+                        selectedBlock === 'разбор договора' ?
+                            <div className={clsx(s.batePickerWrapper, s.selectedContainer)}>
+                                <DatePickerBlock title='разбор договора' >
+                            <p className={s.desc}>Разбор совместимости с договором(для брака, бизнеса и других договоров)</p>
 
+                                    <div className={s.inputContainer}>
+                                        <div className={s.errorInputWrapper}>
+                                            <InputDate className={s.date} label='Дата рождения человека:' value={dogovor1} onChange={setDogovor1} />
+                                            <div>{personalError}</div>
+                                        </div>
+                                        <div className={s.errorInputWrapper}>
+                                            <InputDate className={s.date} label='Дата рождения человека:' value={dogovor2} onChange={setDogovor2} />
+                                            <div>{personalError}</div>
+                                        </div>
+                                        <div className={s.errorInputWrapper}>
+                                            <InputDate className={s.date} label='Дата рождения человека:' value={dogovor3} onChange={setDogovor3} />
+                                            <div>{personalError}</div>
+                                        </div>
+                                    </div>
+                                    <div className={s.buttonContainer}>
+                                        <Button text='Получить Разбор' onClick={handleSubmitDogovor} />
+                                    </div>
+                                </DatePickerBlock>
+                            </div>
+                            : null
+                }
             </div>
 
-        </>
+        </div>
     )
 }
 // предыдущий код 
