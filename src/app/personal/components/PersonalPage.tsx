@@ -45,7 +45,7 @@ export default function PersonalPage() {
     const implementationNumber = sumDigits(missionNumb, sumOfDays, 0)
     return (
         <div className={s.globalContainer}>
-            <Polniy_Razbor/>
+            <h1 className={s.title}>Полный разбор</h1>
             <div className={s.container}>
                 <PersonalCode code={sumOfDays.toString() + missionNumb.toString() + implementationNumber.toString()} />
                 <Conscious {...data[0].data[sumOfDays]} />

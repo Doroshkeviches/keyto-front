@@ -20,7 +20,7 @@ export default function Itog(props: Props) {
         <div>
             <p className='title'> {componentTitle} — {number}</p>
             <div className={clsx(s.strongTitle)}>{title}</div>
-            <p className='text'>{title_text}</p>
+            <p className={clsx('text', s.textContainer)}>{title_text}</p>
             <div className={s.cardContainer}>
                 <div className={s.card}>
                     <div className={s.cardHeader}>
@@ -35,7 +35,7 @@ export default function Itog(props: Props) {
                     <p className={s.strong}>{challenges}</p>
                 </div>
             </div>
-            <p className='text'>{text}</p>
+            <p className={clsx('text', s.textContainer)}>{text}</p>
         </div>
     )
 }

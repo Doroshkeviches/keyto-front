@@ -13,6 +13,7 @@
     padding: 32px 16px;
     color: white;
     text-align: center;
+
     @media (max-width: 1024px) {
         text-align: left;
 
@@ -75,6 +76,7 @@
     gap: 24px;
     margin: 0 150px;
     margin-bottom: 36px;
+
     @media (max-width: 768px) {
         grid-template-columns: 1fr;
 
@@ -100,6 +102,11 @@
 
         }
     }
+}
+
+.pink {
+    background-color: #EEE6F4;
+    color: $color-dark;
 }
 
 .circleTopContainer {
@@ -139,6 +146,7 @@
         width: 80%;
 
     }
+
     @media (max-width: 768px) {
         width: 100%;
 
@@ -158,6 +166,7 @@
         width: 80%;
 
     }
+
     @media (max-width: 768px) {
         width: 100%;
 

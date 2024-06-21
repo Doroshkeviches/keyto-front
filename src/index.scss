@@ -20,7 +20,7 @@
 
 
 //COLORS
-$color-dark: #000000;
+$color-dark: #481C6A;
 $color-light: #F5F3EF;
 
 
@@ -34,13 +34,14 @@ body {
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  background-color: rgba(238, 238, 238, 1);
 }
 
 /* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
-ul[class],
-ol[class] {
-  list-style: none;
-}
+// ul[class],
+// ol[class] {
+//   list-style: none;
+// }
 
 /* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
 a {
@@ -120,6 +121,7 @@ select {
   text-align: center;
   margin-bottom: 24px;
   text-transform: uppercase;
+  font-weight: 700;
 
   @media (max-width: 1024px) {
     font-size: 30px;
@@ -153,11 +155,12 @@ select {
 }
 
 .dataContainer {
-  background-color: rgba(241, 241, 236, 1);
+  background-color: white;
   border-radius: 30px;
   padding: 60px 150px;
+  box-shadow: -4px 4px 13px 0px rgba(0, 0, 0, 0.25);
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     padding: 32px;
   }
 

@@ -61,9 +61,7 @@ export default function SovmestimostPage() {
   console.log(data)
   return (
     <div className={s.container}>
-      <div className={s.bigSvg}>
-        <RazborSovmestimostyLeft />
-      </div>
+      <h1 className={s.title}>Разбор совместимости</h1>
       <div className='dataContainer'>
         <div className={s.wrapper}>
           <div className={s.headerContainer}>

@@ -75,12 +75,12 @@ export default function Conscious(props: IConscious) {
             </div>
             <div className={clsx(s.container50,s.desctopCircle)}>
                 <div className={s.circleTopContainer}>
-                    <div className={s.circleItem}>
+                    <div className={clsx(s.circleItem, s.pink)}>
                         <div className={s.number}>{circleNumbers[0].number}</div>
                         <div>{circleNumbers[0].description}</div>
                     </div>
                     <ArrowRight />
-                    <div className={s.circleItem}>
+                    <div className={clsx(s.circleItem, s.pink)}>
                         <div className={s.number}>{circleNumbers[1].number}</div>
                         <div>{circleNumbers[1].description}</div>
                     </div>
@@ -90,7 +90,7 @@ export default function Conscious(props: IConscious) {
                     margin: '0 auto'
                 }} className={s.circleBottomContainer}>
                     <ArrowTop />
-                    <div className={s.circleItem} style={{
+                    <div className={clsx(s.circleItem, s.pink)} style={{
                         marginTop: 32
                     }}>
                         <div className={s.number}>{circleNumbers[2].number}</div>

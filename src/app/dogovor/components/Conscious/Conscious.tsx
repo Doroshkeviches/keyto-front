@@ -22,7 +22,7 @@ export default function Conscious(props: Props) {
         <div>
             <p className='title'> {componentTitle} — {number}</p>
             <div className={clsx(s.strongTitle)}>{title}</div>
-            <p className='text'>{title_text}</p>
+            <p className={clsx('text', s.textContainer)}>{title_text}</p>
             <div className={s.cardContainer}>
                 <div className={s.card}>
                     <div className={s.cardHeader}>
@@ -38,16 +38,16 @@ export default function Conscious(props: Props) {
                 </div>
             </div>
             <p className='title'>{actionsTitle}</p>
-            <div className={s.actionsContainer}>
+            <ol className={s.actionsContainer}>
                 {actions.map(act => {
                     return (
-                        <div key={act.number} className={s.actItem}>
-                            <div className={s.number}>{act.number}</div>
-                            <p>{act.string}</p>
-                        </div>
+                        <li key={act.number} className={s.actItem}>
+                            {/* <div className={s.number}>{act.number}</div> */}
+                            <p className={s.actString}>{act.string}</p>
+                        </li>
                     )
                 })}
-            </div>
+            </ol>
         </div>
     )
 }
