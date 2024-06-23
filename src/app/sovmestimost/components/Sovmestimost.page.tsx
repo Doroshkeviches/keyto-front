@@ -15,6 +15,7 @@ import Conscious from 'app/personal/components/Conscious';
 import Implementation from 'app/personal/components/Implementation/Implementation';
 import Matrix from 'app/personal/components/Matrix/Matrix';
 import LinksButtons from 'components/LinksButtons/LinksButtons';
+import TExtWithButtonBack from 'components/TextWithButtonBack/TExtWithButtonBack';
 
 const componentsSections = new Map<any, any>([
   ["сознание", Constious],
@@ -63,7 +64,7 @@ export default function SovmestimostPage() {
   return (
     <>
     <div className={s.container}>
-      <h1 className={s.title}>Разбор совместимости</h1>
+      <TExtWithButtonBack title='Разбор совместимости'/>
       <div className='dataContainer'>
         <div className={s.wrapper}>
           <div className={s.headerContainer}>

@@ -1,0 +1,21 @@
+@import 'src/index.scss';
+
+.title {
+    color: $color-dark;
+    text-align: center;
+}
+
+.titleContainer {
+    position: relative;
+}
+
+.button {
+    outline: 2px solid $color-dark;
+    color: $color-dark;
+    padding: 14px 40px;
+    width: fit-content;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}

@@ -11,6 +11,7 @@ import PersonalCode from './PersonalCode/PersonalCode';
 import Polniy_Razbor from 'assets/BigSVG/Polniy_Razbor';
 import Button from 'components/Button/Button';
 import LinksButtons from 'components/LinksButtons/LinksButtons';
+import TExtWithButtonBack from 'components/TextWithButtonBack/TExtWithButtonBack';
 
 const componentsSections = new Map<any, any>([
     ["conscious", Conscious],
@@ -48,7 +49,7 @@ export default function PersonalPage() {
     return (
         <>
             <div className={s.globalContainer}>
-                <h1 className={s.title}>Полный разбор</h1>
+                <TExtWithButtonBack title='Полный разбор' />
                 <div className={s.container}>
                     <PersonalCode code={sumOfDays.toString() + missionNumb.toString() + implementationNumber.toString()} />
                     <Conscious {...data[0].data[sumOfDays]} _day={day} />
@@ -57,7 +58,7 @@ export default function PersonalPage() {
                     <Matrix {...data[4].data[1]} dateNumbers={day.toString() + month.toString() + year.toString()} />
                 </div>
             </div>
-            <LinksButtons/>
+            <LinksButtons />
         </>
     )
 }
