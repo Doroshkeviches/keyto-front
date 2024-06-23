@@ -36,6 +36,8 @@
     box-shadow: 1px 1px 40px 0px rgba(84, 84, 84, 0.25);
     border-radius: 16px;
     justify-content: flex-start;
+    background-color: #e5e5e5;
+    ;
 
     .planetHeader {
         text-transform: uppercase;
@@ -122,10 +124,12 @@
     align-items: center;
     justify-content: flex-start;
     gap: 34px;
+
     @media (max-width: 767px) {
         font-size: 12px;
 
     }
+
     .number {
         @include font-size-64-dark;
         color: white;
@@ -136,10 +140,12 @@
         }
     }
 }
-.karmTask{
+
+.karmTask {
     background-color: $color-dark;
     color: white;
 }
+
 .pink {
     background-color: #EEE6F4;
     color: $color-dark;
@@ -220,8 +226,9 @@
 
 .descriptionTasks {
     @include font-size-24-dark;
+    font-weight: 700;
 
-    @media (max-width: 1024px) {
+    @media (max-width: 1440px) {
         font-size: 16px;
 
     }
