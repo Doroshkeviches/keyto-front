@@ -19,6 +19,7 @@ export default function InputDate(props: Props) {
         <div className={clsx(className, s.container)}>
             <p className={s.label}>{label}</p>
             <DatePicker
+            
                 dayPlaceholder='DD'
                 monthPlaceholder='MM'
                 yearPlaceholder='YYYY'
@@ -26,10 +27,11 @@ export default function InputDate(props: Props) {
                 minDate={new Date('01.01.1900')}
                 format="dd/MM/yyyy"
                 className={s.date}
-                clearIcon={null}
+                // clearIcon={null}
                 calendarIcon={null}
                 shouldOpenCalendar={() => { return false }}
                 onChange={onChange}
+                
                 value={value} />
         </div>
 
