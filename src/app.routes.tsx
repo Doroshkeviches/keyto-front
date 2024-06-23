@@ -1,5 +1,6 @@
 import { authSelector } from "app/auth/store/auth.selectors";
 import Footer from "components/Footer/Footer";
+import Header from "components/page-header.comp";
 import React, { FC, Suspense } from "react";
 import { Navigate, Routes, Route } from "react-router-dom";
 import { useAppSelector } from "storeTypes";
@@ -9,8 +10,9 @@ const PrivateRoute: FC<{ element: any }> = ({ element: Element }) => {
   const { session } = useAppSelector(authSelector)
   return session ? (
     <Suspense fallback={<div />}>
+      <Header />
       <div><Element />
-      <Footer />
+        <Footer />
       </div>
     </Suspense>
   ) : (
@@ -33,6 +35,7 @@ const AdminRoute: FC<{ element: any }> = ({ element: Element }) => {
 // ======= public route ======= //
 const PublicRoute: FC<{ element: any }> = ({ element: Element }) => (
   <Suspense fallback={<div />}>
+    <Header />
     <Element />
     <Footer />
   </Suspense>

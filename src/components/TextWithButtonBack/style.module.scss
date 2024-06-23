@@ -3,6 +3,7 @@
 .title {
     color: $color-dark;
     text-align: center;
+    font-size: 30px;
 }
 
 .titleContainer {
@@ -17,5 +18,9 @@
     border-radius: 20px;
     position: absolute;
     top: 50%;
+    font-weight: 700;
     transform: translate(0, -50%);
+    @media (max-width: 768px) {
+        position: relative;
+    }
 }
