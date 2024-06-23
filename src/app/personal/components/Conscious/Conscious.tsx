@@ -28,10 +28,10 @@ export default function Conscious(props: IConscious) {
                 <div className='title'>Ваше Число Сознания - {id}</div>
                 <p className='text'>{numbersText}</p>
             </div>
-            <div className={clsx(s.importantTextContainer, s.container50)}>
+            <div className={clsx(s.importantTextContainer)}>
                 <p className={s.importantText}>{importantText}</p>
             </div>
-            <div className={clsx(s.container50, s.cardContainer)}>
+            <div className={clsx(s.cardContainer)}>
                 <div className={s.card}>
                     <div className={s.planetHeader}>
                         Планета
@@ -118,7 +118,7 @@ export default function Conscious(props: IConscious) {
             <div className={clsx(s.container50,s.tasksContainer)}>
                 {tasks.map((it) => {
                     return (
-                        <div className={s.circleItem}>
+                        <div className={clsx(s.circleItem, s.karmTask)}>
                             <div className={s.number}>{it.number}</div>
                             <div className={s.descriptionTasks}>{it.string}</div>
                         </div>

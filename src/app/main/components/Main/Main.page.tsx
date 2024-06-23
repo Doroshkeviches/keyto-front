@@ -86,7 +86,7 @@ export default function Main() {
 
                             <div className={s.inputContainer}>
                                 <div className={s.errorInputWrapper}>
-                                    <InputDate className={s.date} label='Дата рождения человека:' value={personalData} onChange={setPersonalData} />
+                                    <InputDate className={s.date} label='Дата рождения' value={personalData} onChange={setPersonalData} />
                                     <div>{personalError}</div>
                                 </div>
                             </div>
@@ -101,11 +101,11 @@ export default function Main() {
                                 <p className={s.desc}>Проверка общей энергии в паре или в группе людей.Главные рекомендации для вашей общей энергии.</p>
                                 <div className={s.inputContainer}>
                                     <div className={s.errorInputWrapper}>
-                                        <InputDate className={s.date} label='Дата рождения человека:' value={sovmest1} onChange={setSovmest1} />
+                                        <InputDate className={s.date} label='Дата рождения 1' value={sovmest1} onChange={setSovmest1} />
                                         <div>{personalError}</div>
                                     </div>
                                     <div className={s.errorInputWrapper}>
-                                        <InputDate className={s.date} label='Дата рождения человека:' value={sovmest2} onChange={setSovmest2} />
+                                        <InputDate className={s.date} label='Дата рождения 2' value={sovmest2} onChange={setSovmest2} />
                                         <div>{personalError}</div>
                                     </div>
                                 </div>
@@ -123,15 +123,15 @@ export default function Main() {
 
                                     <div className={s.inputContainer}>
                                         <div className={s.errorInputWrapper}>
-                                            <InputDate className={s.date} label='Дата рождения человека:' value={dogovor1} onChange={setDogovor1} />
+                                            <InputDate className={s.date} label='Дата рождения 1' value={dogovor1} onChange={setDogovor1} />
                                             <div>{personalError}</div>
                                         </div>
                                         <div className={s.errorInputWrapper}>
-                                            <InputDate className={s.date} label='Дата рождения человека:' value={dogovor2} onChange={setDogovor2} />
+                                            <InputDate className={s.date} label='Дата рождения 2' value={dogovor2} onChange={setDogovor2} />
                                             <div>{personalError}</div>
                                         </div>
                                         <div className={s.errorInputWrapper}>
-                                            <InputDate className={s.date} label='Дата рождения человека:' value={dogovor3} onChange={setDogovor3} />
+                                            <InputDate className={s.date} label='Дата рождения 3' value={dogovor3} onChange={setDogovor3} />
                                             <div>{personalError}</div>
                                         </div>
                                     </div>

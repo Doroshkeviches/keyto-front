@@ -167,30 +167,34 @@ select {
 }
 
 .blockContainer {
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
-  margin-bottom: 58px;
+  margin-bottom: 20px;
 
   @media (max-width: 1440px) {
-    width: 70%;
+    width: 90%;
 
   }
 
   @media (max-width: 768px) {
-    width: 90%;
+    width: 100%;
 
   }
 }
 
 .code {
-  font-size: 240px;
-  line-height: 247px;
+  font-size: 140px;
+  line-height: 147px;
   text-align: center;
   font-weight: 700;
 
+  @media (max-width: 1919px) {
+    font-size: 101px;
+    line-height: 101px;
+  }
   @media (max-width: 768px) {
-    font-size: 114px;
-    line-height: 115px;
+    font-size: 75px;
+    line-height: 75px;
   }
 }
 
