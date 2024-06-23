@@ -14,6 +14,7 @@ import sumDigits, { dateConverter, sumOneDigits } from 'app/main/components/Main
 import Conscious from 'app/personal/components/Conscious';
 import Implementation from 'app/personal/components/Implementation/Implementation';
 import Matrix from 'app/personal/components/Matrix/Matrix';
+import LinksButtons from 'components/LinksButtons/LinksButtons';
 
 const componentsSections = new Map<any, any>([
   ["сознание", Constious],
@@ -60,6 +61,7 @@ export default function SovmestimostPage() {
   }
   console.log(data)
   return (
+    <>
     <div className={s.container}>
       <h1 className={s.title}>Разбор совместимости</h1>
       <div className='dataContainer'>
@@ -86,5 +88,7 @@ export default function SovmestimostPage() {
         </div>
       </div>
     </div>
+    <LinksButtons/>
+    </>
   )
 }

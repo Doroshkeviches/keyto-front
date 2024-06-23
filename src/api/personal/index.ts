@@ -25,5 +25,6 @@ export type IConscious = {
     circleText: string,
     tasks: ITask[]
     positive: string,
-    negative: string
+    negative: string,
+    _day: string ,
 }

@@ -9,6 +9,7 @@ import { getDogovorData } from 'api/dogovor';
 import Itog from './components/Itog/Itog';
 import Code from './components/Code/Code';
 import Button from 'components/Button/Button';
+import LinksButtons from 'components/LinksButtons/LinksButtons';
 
 
 
@@ -51,6 +52,7 @@ export default function Dogovor() {
         return <></>
     }
     return (
+        <>
         <div className={s.container}>
             <div className='dataContainer'>
                 <div className={s.wrapper}>
@@ -64,9 +66,10 @@ export default function Dogovor() {
                     {/* <Mission number={missionNumb} {...data[1].data[missionNumb]} />
             <Implementation number={implementationNumber} {...data[2].data[implementationNumber]} />
             <Matrix {...data[4].data[1]} dateNumbers={day.toString() + month.toString() + year.toString()} /> */}
-            <Button onClick={() => window.print()} text='print'/>
                 </div>
             </div>
         </div>
+        <LinksButtons/>
+        </>
     )
 }

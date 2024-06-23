@@ -1,6 +1,6 @@
 import { getPersonalData } from 'api/personal'
 import React, { useEffect, useState } from 'react'
-import { useParams, useRoutes, useSearchParams } from 'react-router-dom'
+import { Link, useParams, useRoutes, useSearchParams } from 'react-router-dom'
 import Conscious from './Conscious';
 import s from './style.module.scss'
 import Mission from './Mission/Mission';
@@ -9,6 +9,8 @@ import Matrix from './Matrix/Matrix';
 import sumDigits, { sumOneDigits } from 'app/main/components/Main/helper';
 import PersonalCode from './PersonalCode/PersonalCode';
 import Polniy_Razbor from 'assets/BigSVG/Polniy_Razbor';
+import Button from 'components/Button/Button';
+import LinksButtons from 'components/LinksButtons/LinksButtons';
 
 const componentsSections = new Map<any, any>([
     ["conscious", Conscious],
@@ -44,15 +46,18 @@ export default function PersonalPage() {
     }
     const implementationNumber = sumDigits(missionNumb, sumOfDays, 0)
     return (
-        <div className={s.globalContainer}>
-            <h1 className={s.title}>Полный разбор</h1>
-            <div className={s.container}>
-                <PersonalCode code={sumOfDays.toString() + missionNumb.toString() + implementationNumber.toString()} />
-                <Conscious {...data[0].data[sumOfDays]} />
-                <Mission number={missionNumb} {...data[1].data[missionNumb]} />
-                <Implementation number={implementationNumber} {...data[2].data[implementationNumber]} />
-                <Matrix {...data[4].data[1]} dateNumbers={day.toString() + month.toString() + year.toString()} />
+        <>
+            <div className={s.globalContainer}>
+                <h1 className={s.title}>Полный разбор</h1>
+                <div className={s.container}>
+                    <PersonalCode code={sumOfDays.toString() + missionNumb.toString() + implementationNumber.toString()} />
+                    <Conscious {...data[0].data[sumOfDays]} _day={day} />
+                    <Mission number={missionNumb} {...data[1].data[missionNumb]} />
+                    <Implementation number={implementationNumber} {...data[2].data[implementationNumber]} />
+                    <Matrix {...data[4].data[1]} dateNumbers={day.toString() + month.toString() + year.toString()} />
+                </div>
             </div>
-        </div>
+            <LinksButtons/>
+        </>
     )
 }

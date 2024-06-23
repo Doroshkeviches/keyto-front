@@ -1,3 +1,4 @@
+import Footer from "components/Footer/Footer";
 import React, { FC, PropsWithChildren, Suspense } from "react";
 import { Navigate, Routes, Route } from "react-router-dom";
 

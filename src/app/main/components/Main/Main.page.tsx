@@ -9,6 +9,7 @@ import clsx from 'clsx';
 import Razbor_Sovmestimosty from 'assets/BigSVG/Razbor_Sovmestimosty';
 import Polniy_Razbor from 'assets/BigSVG/Polniy_Razbor';
 import Razbor_Dogovora from 'assets/BigSVG/Razbor_Dogovora';
+import Footer from 'components/Footer/Footer';
 const blocks = ['полный разбор', 'разбор совместимости', 'разбор договора']
 export default function Main() {
     const navigate = useNavigate()
@@ -67,14 +68,16 @@ export default function Main() {
         <div className={s.abs}>
             <h1 className={s.title}>Выберите вид разбора</h1>
             <div className={s.container}>
-                <div className={clsx(s.button, selectedBlock === 'полный разбор' ? s.selected : '')} onClick={() => handleBlockChange('полный разбор')}>
-                    полный разбор
-                </div>
-                <div className={clsx(s.button, selectedBlock === 'разбор совместимости' ? s.selected : '')} onClick={() => handleBlockChange('разбор совместимости')}>
-                    разбор совместимости
-                </div>
-                <div className={clsx(s.button, selectedBlock === 'разбор договора' ? s.selected : '')} onClick={() => handleBlockChange('разбор договора')}>
-                    разбор договора
+                <div className={s.buttons}>
+                    <div className={clsx(s.button, selectedBlock === 'полный разбор' ? s.selected : '')} onClick={() => handleBlockChange('полный разбор')}>
+                        полный разбор
+                    </div>
+                    <div className={clsx(s.button, selectedBlock === 'разбор совместимости' ? s.selected : '')} onClick={() => handleBlockChange('разбор совместимости')}>
+                        разбор совместимости
+                    </div>
+                    <div className={clsx(s.button, selectedBlock === 'разбор договора' ? s.selected : '')} onClick={() => handleBlockChange('разбор договора')}>
+                        разбор договора
+                    </div>
                 </div>
                 {selectedBlock === 'полный разбор' ?
                     <div className={clsx(s.batePickerWrapper, s.selectedContainer)}>
@@ -95,7 +98,7 @@ export default function Main() {
                     : selectedBlock === 'разбор совместимости' ?
                         <div className={clsx(s.batePickerWrapper, s.selectedContainer)}>
                             <DatePickerBlock title='разбор совместимости' >
-                            <p className={s.desc}>Проверка общей энергии в паре или в группе людей.Главные рекомендации для вашей общей энергии.</p>
+                                <p className={s.desc}>Проверка общей энергии в паре или в группе людей.Главные рекомендации для вашей общей энергии.</p>
                                 <div className={s.inputContainer}>
                                     <div className={s.errorInputWrapper}>
                                         <InputDate className={s.date} label='Дата рождения человека:' value={sovmest1} onChange={setSovmest1} />
@@ -116,7 +119,7 @@ export default function Main() {
                         selectedBlock === 'разбор договора' ?
                             <div className={clsx(s.batePickerWrapper, s.selectedContainer)}>
                                 <DatePickerBlock title='разбор договора' >
-                            <p className={s.desc}>Разбор совместимости с договором(для брака, бизнеса и других договоров)</p>
+                                    <p className={s.desc}>Разбор совместимости с договором(для брака, бизнеса и других договоров)</p>
 
                                     <div className={s.inputContainer}>
                                         <div className={s.errorInputWrapper}>

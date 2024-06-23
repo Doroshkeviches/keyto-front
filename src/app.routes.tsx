@@ -1,4 +1,5 @@
 import { authSelector } from "app/auth/store/auth.selectors";
+import Footer from "components/Footer/Footer";
 import React, { FC, Suspense } from "react";
 import { Navigate, Routes, Route } from "react-router-dom";
 import { useAppSelector } from "storeTypes";
@@ -8,7 +9,9 @@ const PrivateRoute: FC<{ element: any }> = ({ element: Element }) => {
   const { session } = useAppSelector(authSelector)
   return session ? (
     <Suspense fallback={<div />}>
-      <div><Element /></div>
+      <div><Element />
+      <Footer />
+      </div>
     </Suspense>
   ) : (
     <Navigate to={"/auth/signin"} />
@@ -31,6 +34,7 @@ const AdminRoute: FC<{ element: any }> = ({ element: Element }) => {
 const PublicRoute: FC<{ element: any }> = ({ element: Element }) => (
   <Suspense fallback={<div />}>
     <Element />
+    <Footer />
   </Suspense>
 );
 

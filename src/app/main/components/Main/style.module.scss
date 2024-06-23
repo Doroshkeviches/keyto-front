@@ -5,12 +5,14 @@
 }
 
 .abs {
-    position: absolute;
-    top: 100px;
+    position: relative;
     width: 100%;
+    padding-top: 100px;
 
     @media (max-width: 767px) {
         top: 30px;
+        position: relative;
+
     }
 }
 
@@ -23,6 +25,7 @@
     width: 95%;
     margin: 0 auto;
     display: flex;
+    flex-direction: column;
     gap: 50px;
     position: relative;
     justify-content: space-between;
@@ -31,6 +34,7 @@
     @media (max-width: 767px) {
         gap: 20px;
         font-size: 10px;
+        flex-direction: column;
     }
 }
 
@@ -55,27 +59,33 @@
     gap: 16px;
     max-width: 1000px;
 }
+.buttons{
+    display: flex;
+}
 
 .selectedContainer {
     width: 100%;
-    position: absolute;
+    position: relative;
     background-color: white;
     box-shadow: -2px 2px 7px 0px rgba(0, 0, 0, 0.25);
-    top: 120px;
-    left: 50%;
-    transform: translate(-50%, 0%);
     z-index: 2;
 
     @media (max-width: 767px) {
         top: 100px;
+        position: relative;
+        top: 0px;
+        left: 0px;
+        transform: unset;
     }
 }
-.desc{
+
+.desc {
     text-align: center;
     width: 40%;
     margin-bottom: 16px;
 
 }
+
 .selected {
     background-color: white;
     box-shadow: -2px 2px 7px 0px rgba(0, 0, 0, 0.25);
@@ -99,6 +109,7 @@
 
     @media (max-width: 768px) {
         padding: 32px 8px;
+        width: 100%;
     }
 }
 

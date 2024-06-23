@@ -16,7 +16,7 @@ export default function Conscious(props: IConscious) {
         theme,
         circleNumbers,
         circleText,
-        tasks, positive, negative } = props
+        tasks, positive, negative,_day } = props
     let [searchParams, _] = useSearchParams();
     const param = searchParams.get('date')
     if (!param) return null
@@ -112,7 +112,7 @@ export default function Conscious(props: IConscious) {
                 })}
             </div>
             <div className={clsx(s.container50,'text',s.mb50)}>
-                {circleText}
+                {circleText[_day as any]}
             </div>
             <p className='title'>КАРМИЧЕСКИЕ ЗАДАЧИ:</p>
             <div className={clsx(s.container50,s.tasksContainer)}>
