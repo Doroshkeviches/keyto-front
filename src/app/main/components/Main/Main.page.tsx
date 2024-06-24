@@ -28,7 +28,26 @@ export default function Main() {
     const [dogovor2, setDogovor2] = useState<Value>(null);
     const [dogovor3, setDogovor3] = useState<Value>(null);
     const [value, onChange] = useState<Value>(null);
+    const [inputsDog, setInputsDog] = useState<{ id: number, value: Value | null, error: null | string }[]>([]);
+    const [inputsSovmest, setInputsSovmest] = useState<{ id: number, value: Value | null, error: null | string }[]>([]);
 
+    const addInput = () => {
+        setInputsSovmest([...inputsSovmest, { id: inputsSovmest.length + 1, value: null, error: null }]);
+    };
+    const handleInputChange = (id: any, newValue: any) => {
+
+        setInputsSovmest(inputsSovmest.map(input =>
+            input.id === id ? { ...input, value: newValue } : input
+        ));
+    };
+    const addInputDog = () => {
+        setInputsDog([...inputsDog, { id: inputsDog.length + 1, value: null, error: null }]);
+    };
+    const handleInputChangeDog = (id: any, newValue: any) => {
+        setInputsDog(inputsDog.map(input =>
+            input.id === id ? { ...input, value: newValue } : input
+        ));
+    };
     const [selectedBlock, setSelectedBlock] = useState<string>(blocks[0]);
     const handleBlockChange = (title: string) => {
         setSelectedBlock(title)
@@ -110,6 +129,7 @@ export default function Main() {
                             </div>
                             <div className={s.buttonContainer}>
                                 <Button text='Рассчитать' onClick={handleSubmitPersonal} />
+
                             </div>
                         </DatePickerBlock>
                     </div>
@@ -129,6 +149,10 @@ export default function Main() {
                                 </div>
                                 <div className={s.buttonContainer}>
                                     <Button text='Рассчитать' onClick={handleSubmitSovmestimost} />
+                                    <div onClick={addInput} className={s.addInputBtn}>+ Добавить дату</div>
+                                    {inputsSovmest.map(it => (
+                                        <InputDate className={s.date} label='Дата рождения' value={it.value} onChange={(e,) => handleInputChange(it.id, e.target.value)} />
+                                    ))}
                                 </div>
                             </DatePickerBlock>
 
@@ -155,6 +179,10 @@ export default function Main() {
                                     </div>
                                     <div className={s.buttonContainer}>
                                         <Button text='Рассчитать' onClick={handleSubmitDogovor} />
+                                        <div onClick={addInputDog} className={s.addInputBtn}>+ Добавить дату</div>
+                                        {inputsDog.map(it => (
+                                            <InputDate className={s.date} label='Дата рождения' value={it.value} onChange={(e,) => handleInputChangeDog(it.id, e.target.value)} />
+                                        ))}
                                     </div>
                                 </DatePickerBlock>
                             </div>

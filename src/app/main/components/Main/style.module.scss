@@ -130,3 +130,15 @@
     width: 100%;
     max-width: 300px;
 }
+.addInputBtn{
+    padding: 20px;
+    outline: 2px solid $color-dark;
+    font-size: 24px;
+    font-weight: 700;
+    border-radius: 20px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
