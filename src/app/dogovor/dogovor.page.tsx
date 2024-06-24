@@ -59,10 +59,10 @@ export default function Dogovor() {
                 <div className='dataContainer'>
                     <div className={s.wrapper}>
                         <Code date1={date1Conv} date2={date2Conv} date3={date3Conv} code={sumOfDays.toString() + missionNumb.toString() + implementationNumber.toString()} />
-                        <Conscious actionsTitle='Действия, которые помогают улучшить отношения в рамках договора:' componentTitle='ОБЩЕЕ Число Сознания' number={sumOfDays} {...data[0].data[sumOfDays]} />
-                        <Conscious actionsTitle='Действия, которые ПРИНЕСУТ ВАМ ЛУЧШИЙ РЕЗУЛЬТАТ:' componentTitle='ОБЩЕЕ Число МИССИИ' number={missionNumb} {...data[1].data[sumOfDays]} />
-                        <Conscious actionsTitle='Действия, которые помогут реализовать договор:' componentTitle='ОБЩЕЕ Число РЕАЛИЗАЦИИ' number={implementationNumber} {...data[2].data[sumOfDays]} />
-                        <Itog componentTitle='ОБЩЕЕ Число ИТОГА' number={implementationNumber} {...data[3].data[itogNumber]} />
+                        <Conscious actionsTitle='Действия, которые помогают улучшить отношения в рамках договора' componentTitle='Общее Число Сознания' number={sumOfDays} {...data[0].data[sumOfDays]} />
+                        <Conscious actionsTitle='Действия, которые принесут вам лучший результат' componentTitle='Общее Число Действия' number={missionNumb} {...data[1].data[sumOfDays]} />
+                        <Conscious actionsTitle='Действия, которые принесут вам лучший результат' componentTitle='Общее Число Реализации' number={implementationNumber} {...data[2].data[sumOfDays]} />
+                        <Itog componentTitle='Общее Число Итога' number={implementationNumber} {...data[3].data[itogNumber]} title='Полный успех отношений, либо разрыв из-за хитрости.'/>
 
 
                         {/* <Mission number={missionNumb} {...data[1].data[missionNumb]} />

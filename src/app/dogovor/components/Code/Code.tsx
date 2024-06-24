@@ -9,7 +9,7 @@ export default function Code({ code, date1, date2, date3 }: { code: string, date
                 <div className={clsx('date', s.date2)}>{date2}</div>
                 <div className={clsx('date', s.date3)}>{date3}</div>
             </div>
-            <p className='title'>ВАШ КОД СОВМЕСТИМОСТИ С ДОГОВОРОМ</p>
+            <p className='title'>Ваш код совместимости</p>
             <p className='code'>{code}</p>
         </div>
     )

@@ -21,7 +21,7 @@ export default function Conscious(props: Props) {
     return (
         <div>
             <p className='title'> {componentTitle} — {number}</p>
-            <div className={clsx(s.strongTitle)}>{title}</div>
+            <div className={clsx(s.miniTitle)}>{title}</div>
             <p className={clsx('text', s.textContainer)}>{title_text}</p>
             <div className={s.cardContainer}>
                 <div className={s.card}>

@@ -125,7 +125,7 @@ export default function Conscious(props: IConscious) {
                     )
                 })}
             </div>
-            <div className={clsx(s.container70,s.positiveNegativeContainer)}>
+            {/* <div className={clsx(s.container70,s.positiveNegativeContainer)}>
                 <div className={s.card}>
                     <div className={clsx(s.planetHeader, s.bigCard)}>
                         Позитивные качества
@@ -138,7 +138,7 @@ export default function Conscious(props: IConscious) {
                     </div>
                     <p className={clsx(s.planet, s.bigCardPlanet)}>{negative}</p>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

@@ -14,7 +14,13 @@ const blocks = ['полный разбор', 'разбор совместимо�
 export default function Main() {
     const navigate = useNavigate()
     const [personalData, setPersonalData] = useState<Value>(null);
+    const [sovmest1Error, setSovmest1Error] = useState<string | null>(null);
+    const [sovmest2Error, setSovmest2Error] = useState<string | null>(null);
+    const [dogovor1Error, setDogovor1Error] = useState<string | null>(null);
+    const [dogovor2Error, setDogovor2Error] = useState<string | null>(null);
+    const [dogovor3Error, setDogovor3Error] = useState<string | null>(null);
     const [personalError, setPersonalError] = useState<string | null>(null);
+
 
     const [sovmest1, setSovmest1] = useState<Value>(null);
     const [sovmest2, setSovmest2] = useState<Value>(null);
@@ -40,8 +46,12 @@ export default function Main() {
         navigate(`/personal?date=${milisec}`)
     }
     const handleSubmitSovmestimost = () => {
-        if (!sovmest1 || !sovmest2) {
-            setPersonalError('Error')
+        if (!sovmest1) {
+            setSovmest1Error('Error')
+            return
+        }
+        if (!sovmest2) {
+            setSovmest2Error('Error')
             return
         }
         const milisec1 = sovmest1.valueOf()
@@ -54,8 +64,16 @@ export default function Main() {
         navigate(`/sovmestimost?date1=${milisec1}&date2=${milisec2}`)
     }
     const handleSubmitDogovor = () => {
-        if (!dogovor1 || !dogovor2 || !dogovor3) {
-            setPersonalError('Error')
+        if (!dogovor1) {
+            setDogovor1Error('Error')
+            return
+        }
+        if (!dogovor2) {
+            setDogovor2Error('Error')
+            return
+        }
+        if (!dogovor3) {
+            setDogovor3Error('Error')
             return
         }
         const milisec1 = dogovor1.valueOf()
@@ -91,7 +109,7 @@ export default function Main() {
                                 </div>
                             </div>
                             <div className={s.buttonContainer}>
-                                <Button text='Получить Разбор' onClick={handleSubmitPersonal} />
+                                <Button text='Рассчитать' onClick={handleSubmitPersonal} />
                             </div>
                         </DatePickerBlock>
                     </div>
@@ -99,18 +117,18 @@ export default function Main() {
                         <div className={clsx(s.batePickerWrapper, s.selectedContainer)}>
                             <DatePickerBlock title='разбор совместимости' >
                                 <p className={s.desc}>Проверка общей энергии в паре или в группе людей.Главные рекомендации для вашей общей энергии.</p>
-                                <div className={s.inputContainer}>
+                                <div className={s.inputContainerSovmest}>
                                     <div className={s.errorInputWrapper}>
                                         <InputDate className={s.date} label='Дата рождения 1' value={sovmest1} onChange={setSovmest1} />
-                                        <div>{personalError}</div>
+                                        <div>{sovmest1Error}</div>
                                     </div>
                                     <div className={s.errorInputWrapper}>
                                         <InputDate className={s.date} label='Дата рождения 2' value={sovmest2} onChange={setSovmest2} />
-                                        <div>{personalError}</div>
+                                        <div>{sovmest2Error}</div>
                                     </div>
                                 </div>
                                 <div className={s.buttonContainer}>
-                                    <Button text='Получить Разбор' onClick={handleSubmitSovmestimost} />
+                                    <Button text='Рассчитать' onClick={handleSubmitSovmestimost} />
                                 </div>
                             </DatePickerBlock>
 
@@ -124,19 +142,19 @@ export default function Main() {
                                     <div className={s.inputContainer}>
                                         <div className={s.errorInputWrapper}>
                                             <InputDate className={s.date} label='Дата рождения 1' value={dogovor1} onChange={setDogovor1} />
-                                            <div>{personalError}</div>
+                                            <div>{dogovor1Error}</div>
                                         </div>
                                         <div className={s.errorInputWrapper}>
                                             <InputDate className={s.date} label='Дата рождения 2' value={dogovor2} onChange={setDogovor2} />
-                                            <div>{personalError}</div>
+                                            <div>{dogovor2Error}</div>
                                         </div>
                                         <div className={s.errorInputWrapper}>
                                             <InputDate className={s.date} label='Дата рождения 3' value={dogovor3} onChange={setDogovor3} />
-                                            <div>{personalError}</div>
+                                            <div>{dogovor3Error}</div>
                                         </div>
                                     </div>
                                     <div className={s.buttonContainer}>
-                                        <Button text='Получить Разбор' onClick={handleSubmitDogovor} />
+                                        <Button text='Рассчитать' onClick={handleSubmitDogovor} />
                                     </div>
                                 </DatePickerBlock>
                             </div>
@@ -154,13 +172,13 @@ export default function Main() {
                         <InputDate className={s.date} label='Дата рождения человека:' value={personalData} onChange={setPersonalData} />
                         <div>{personalError}</div>
                     </div>
-                    <Button text='Получить Разбор' onClick={handleSubmitPersonal} />
+                    <Button text='Рассчитать' onClick={handleSubmitPersonal} />
                 </DatePickerBlock>
                 <div className={s.line}></div>
                 <DatePickerBlock title='Полный разбор' >
                     <InputDate className={s.date} label='Дата рождения человека:' value={value} onChange={onChange} />
                     <InputDate className={s.date} label='Дата рождения человека:' value={value} onChange={onChange} />
-                    <Button text='Получить Разбор' />
+                    <Button text='Рассчитать' />
                 </DatePickerBlock>
             </div>
             <div className={s.matchContainer}>
@@ -168,6 +186,6 @@ export default function Main() {
                     <InputDate className={s.date} label='Дата рождения человека:' value={value} onChange={onChange} />
                     <InputDate className={s.date} label='Дата рождения человека:' value={value} onChange={onChange} />
                     <InputDate className={s.date} label='Дата рождения человека:' value={value} onChange={onChange} />
-                    <Button text='Получить Разбор' />
+                    <Button text='Рассчитать' />
                 </DatePickerBlock>
             </div> */}

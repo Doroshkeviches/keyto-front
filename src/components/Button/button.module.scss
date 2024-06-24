@@ -1,7 +1,7 @@
 @import 'src/index.scss';
 
 .button {
-    font-size: 18px;
+    font-size: 24px;
     background-color: transparent;
     color: $color-light;
     outline: none;
@@ -18,11 +18,10 @@
 
 .container {
     @include font-style;
-    border-radius: 3px;
+    font-weight: 700;
+    padding: 20px;
     background-color: $color-dark ;
-    padding: 15px 0px;
     text-align: center;
     width: 100%;
-    border-radius: 12px;
-
+    border-radius: 20px;
 }
