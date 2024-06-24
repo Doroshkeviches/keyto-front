@@ -137,7 +137,7 @@ export default function Main() {
                         <div className={clsx(s.batePickerWrapper, s.selectedContainer)}>
                             <DatePickerBlock title='разбор совместимости' >
                                 <p className={s.desc}>Проверка общей энергии в паре или в группе людей.Главные рекомендации для вашей общей энергии.</p>
-                                <div className={s.inputContainerSovmest}>
+                                <div className={s.inputContainer}>
                                     <div className={s.errorInputWrapper}>
                                         <InputDate className={s.date} label='Дата рождения 1' value={sovmest1} onChange={setSovmest1} />
                                         <div>{sovmest1Error}</div>
