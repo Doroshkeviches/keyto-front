@@ -24,6 +24,7 @@ export default function InputPassword(props: Props) {
     const handleClickShowPassword = () => setIsShowPassword((show) => !show);
     return (
         <div>
+            <label className={s.label} htmlFor={rest.name}>{rest.label}</label>
             <div className={s.container}>
                 <input placeholder={placeholder} {...rest} type={isShowPassword ? 'text' : 'password'} className={s.input} />
                 {isShowPassword ? <Visibility onClick={handleClickShowPassword} className={s.icon} /> : <VisibilityOff onClick={handleClickShowPassword} className={s.icon} />}

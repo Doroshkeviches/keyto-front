@@ -7,7 +7,7 @@
     border: 1px solid #EBE4E4;
     color: $color-dark;
     font-family: 'Montserrat';
-
+    outline: 2px solid $color-dark;
 }
 
 .icon {
@@ -30,7 +30,8 @@
     font-size: 14px;
     color: red
 }
-.date{
+
+.date {
     width: 100%;
     padding: 15px 30px;
     border-radius: 20px;
@@ -40,13 +41,16 @@
     box-shadow: 0px 4px 7px 0px rgba(0, 0, 0, 0.25);
 
 }
+
 .date * {
     outline: none;
     border: none !important;
 }
-.label{
+
+.label {
     text-align: center;
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 20px;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 500;
+    margin-bottom: 10px;
 }

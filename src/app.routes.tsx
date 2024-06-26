@@ -35,9 +35,9 @@ const AdminRoute: FC<{ element: any }> = ({ element: Element }) => {
 // ======= public route ======= //
 const PublicRoute: FC<{ element: any }> = ({ element: Element }) => (
   <Suspense fallback={<div />}>
-    <Header />
+    {/* <Header /> */}
     <Element />
-    <Footer />
+    {/* <Footer /> */}
   </Suspense>
 );
 
@@ -60,16 +60,16 @@ const AppRoutes = () => {
       <Route path={"/admin/*"} element={<AdminRoute element={() => <div>ADMIN</div>} />} />
 
       {/* TODO CHANGe to private route */}
-      <Route path={"/personal/*"} element={<PublicRoute element={PersonalPage} />} />
+      <Route path={"/personal/*"} element={<PrivateRoute element={PersonalPage} />} />
       {/* TODO CHANGe to private route */}
-      <Route path={"/sovmestimost/*"} element={<PublicRoute element={SovmestimostPage} />} />
-      <Route path={"/dogovor/*"} element={<PublicRoute element={DogovorPage} />} />
+      <Route path={"/sovmestimost/*"} element={<PrivateRoute element={SovmestimostPage} />} />
+      <Route path={"/dogovor/*"} element={<PrivateRoute element={DogovorPage} />} />
 
       {/* PRIVATE */}
-      <Route path={"/*"} element={<PublicRoute element={MainPage} />} />
+      <Route path={"/*"} element={<PrivateRoute element={MainPage} />} />
 
       {/* DEFAULT */}
-      {/* <Route path='*' element={<Navigate to="/auth" />} /> */}
+      <Route path='*' element={<Navigate to="/auth/signin" />} />
     </Routes>
   );
 };

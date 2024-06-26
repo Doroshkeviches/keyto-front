@@ -58,8 +58,8 @@ export default function SignIn() {
           <Input
             id="email"
             name="email"
-            label="Email"
-            placeholder='Enter your email'
+            label="Электронная почта"
+            placeholder='example@gmail.com'
             value={formik.values.email}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -69,8 +69,8 @@ export default function SignIn() {
           <InputPassword
             id="password"
             name="password"
-            label="password"
-            placeholder='Enter your password'
+            label="Пароль"
+            placeholder='Введите пароль'
             value={formik.values.password}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}

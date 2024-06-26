@@ -53,7 +53,7 @@ export default function ChangePassword() {
                     <Input
                         id="resetToken"
                         name="resetToken"
-                        label="resetToken"
+                        label="Код восстановления"
                         placeholder='Enter your resetToken'
                         value={formik.values.resetToken}
                         onChange={formik.handleChange}
@@ -64,7 +64,7 @@ export default function ChangePassword() {
                     <InputPassword
                         id="password"
                         name="password"
-                        label="password"
+                        label="Пароль"
                         placeholder='Enter your password'
                         value={formik.values.password}
                         onChange={formik.handleChange}
@@ -75,7 +75,7 @@ export default function ChangePassword() {
                     <InputPassword
                         id="password_confirm"
                         name="password_confirm"
-                        label="password_confirm"
+                        label="Подтверждение пароля"
                         placeholder='Confirm password'
                         value={formik.values.password_confirm}
                         onChange={formik.handleChange}

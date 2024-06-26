@@ -19,6 +19,7 @@ export default function Input(props: Props) {
     const { type = 'text', placeholder, helperText, error, ...rest } = props
     return (
         <div>
+            <label className={s.label} htmlFor={rest.name}>{rest.label}</label>
             <input placeholder={placeholder} {...rest} type={type} className={s.input} />
             {error && <p className='error'>{helperText}</p>}
         </div>

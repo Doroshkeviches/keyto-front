@@ -9,6 +9,7 @@ export const signIn = createAsyncThunk<TokenDto, { email: string, password: stri
     localStorage.setItem('access-token', response.data.access_token)
     return response.data;
   } catch (error: any) {
+    console.log(error)
     return rejectWithValue(error);
   }
 });

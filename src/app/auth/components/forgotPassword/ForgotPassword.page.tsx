@@ -50,8 +50,8 @@ export default function ForgotPassword() {
     return (
         <AuthLayout title='Забыли пароль?'>
             <div className={s.container}>
-                <p className={s.description}>Напишите вашу электронную почту, чтобы восстановить пароль</p>
                 <div>
+                <p className={s.description}>Напишите вашу электронную почту, чтобы восстановить пароль</p>
                     <Input
                         id="email"
                         name="email"
