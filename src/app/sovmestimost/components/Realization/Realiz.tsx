@@ -8,7 +8,7 @@ export default function Realization(props: Props) {
     const { text,number } = props
     return (
         <>
-            <div className='title'>ОБЩЕЕ Число РЕАЛИЗАЦИИ — {number}</div>
+            <div className='title'>Общее Число Реализации — {number}</div>
             <div className='text'>{text}</div>
 
         </>

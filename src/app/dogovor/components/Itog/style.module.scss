@@ -86,13 +86,9 @@
     grid-template-rows: 1fr;
     gap: 24px;
     margin: 0 auto;
-    width: 70%;
+    width: 90%;
     margin-bottom: 36px;
 
-    @media (max-width: 1439PX) {
-        width: 80%;
-
-    }
 
     @media (max-width: 768px) {
         grid-template-columns: 1fr;
@@ -150,12 +146,7 @@
     background-color: $color-dark;
     border-radius: 10px;
     color: white;
-    width: 70%;
-
-    @media (max-width: 1439px) {
-        width: 80%;
-
-    }
+    width: 90%;
     @media (max-width: 768px) {
         padding: 14px;
         width: 100%;

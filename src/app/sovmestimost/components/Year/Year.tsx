@@ -8,7 +8,7 @@ export default function Year(props: Props) {
     const { text, number } = props
     return (
         <>
-            <div className='title'>ВАШ ОБЩИЙ ЛИЧНЫЙ ГОД — {number}</div>
+            <div className='title'>Общий год — {number}</div>
             <div className='text'>{text}</div>
 
         </>

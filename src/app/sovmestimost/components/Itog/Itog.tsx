@@ -8,7 +8,7 @@ export default function Itog(props: Props) {
     const { text,number } = props
     return (
         <>
-            <div className='title'>ИТОГ СОВМЕСТИМОСТИ — {number}</div>
+            <div className='title'>Общее Число Итога — {number}</div>
             <div className='text'>{text}</div>
 
         </>

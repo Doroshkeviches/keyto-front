@@ -9,7 +9,7 @@ export default function Constious(props: Props) {
 
     return (
         <>
-            <div className='title'>ОБЩЕЕ Число Сознания — {number}</div>
+            <div className='title'>Общее Число Сознания — {number}</div>
             <div className='text'>{text}</div>
 
         </>

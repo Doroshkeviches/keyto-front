@@ -12,7 +12,7 @@ export default function PersonalCode({ code }: { code: string }) {
     return (
         <div className='blockContainer'>
             <p className='date'>{date1Conv}</p>
-            <p className='date'>ВАШ ЛИЧНЫЙ КОД:</p>
+            <p className={s.title}>Ваш личный код</p>
             <p className='code'>{code}</p>
         </div>
     )

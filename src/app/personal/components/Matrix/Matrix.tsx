@@ -30,10 +30,10 @@ export default function Matrix(props: { list: any[], dateNumbers: string }) {
                 <div className={s.textContainer}>
                     <p className='title' style={{
                         textAlign: 'left'
-                    }}>Описание Вашей матрицы</p>
+                    }}>Описание матрицы</p>
                     <p className='text' style={{
                         margin: 0
-                    }}>Далее мы подробно расскажем о тех цифрах, которые есть в Вашей матрице, и о тех энергиях, которые Вам нужно наработать в этой жизни.<br />
+                    }}>Далее мы подробно расскажем о тех цифрах, которые есть в Вашей матрице, и о тех энергиях, которые Вам нужно наработать в этой жизни.
                         Если Вы будете использовать данные рекомендации, вы очень быстро заполните свою матрицу и перейдёте на новый уровень развития!</p>
                 </div>
                 <div className={s.boardContainer}>
@@ -49,7 +49,7 @@ export default function Matrix(props: { list: any[], dateNumbers: string }) {
                     return (
                         <div key={index} className={s.card}>
                             <div className={clsx(s.side, getIsTrue(index) ? s.trueCard : s.falseCard)}>
-                                <p className={s.sideTitle}>{getIsTrue(index) ? 'У вас есть энергия' : 'У вас нет энергии'}</p>
+                                <p className={s.sideTitle}>{getIsTrue(index) ? 'Есть энергия' : 'Нет энергии'}</p>
                                 <div className={s.sideNumber}>{index + 1}</div>
                             </div>
                             <div className={s.main}>{it[`${getIsTrue(index)}`]}</div>

@@ -19,9 +19,9 @@ export default function InputDate(props: Props) {
         <div className={clsx(className, s.container)}>
             <p className={s.label}>{label}</p>
             <DatePicker
-                dayPlaceholder='DD'
+                dayPlaceholder='ДД'
                 monthPlaceholder='MM'
-                yearPlaceholder='YYYY'
+                yearPlaceholder='ГГГГ'
                 format="dd/MM/yyyy"
                 className={s.date}
                 // clearIcon={null}

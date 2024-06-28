@@ -8,7 +8,7 @@ export default function Mission(props: Props) {
     const { text, number } = props
     return (
         <>
-            <div className='title'>ОБЩЕЕ Число МИССИИ — {number}</div>
+            <div className='title'>Общее Число Миссии — {number}</div>
             <div className='text'>{text}</div>
 
         </>
