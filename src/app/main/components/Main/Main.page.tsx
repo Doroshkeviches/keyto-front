@@ -35,7 +35,6 @@ export default function Main() {
         setInputsSovmest([...inputsSovmest, { id: inputsSovmest.length + 1, value: null, error: null }]);
     };
     const handleInputChange = (id: any, newValue: any) => {
-
         setInputsSovmest(inputsSovmest.map(input =>
             input.id === id ? { ...input, value: newValue } : input
         ));
@@ -80,7 +79,7 @@ export default function Main() {
         const date1 = dateConverter(sovmest1)
         const date2 = dateConverter(sovmest2)
 
-        navigate(`/sovmestimost?date1=${milisec1}&date2=${milisec2}`)
+        navigate(`/sovmestimost?date1=${milisec1}&date2=${milisec2}&date3=${JSON.stringify(inputsSovmest)}`)
     }
     const handleSubmitDogovor = () => {
         if (!dogovor1) {
@@ -99,7 +98,7 @@ export default function Main() {
         const milisec2 = dogovor2.valueOf()
         const milisec3 = dogovor3.valueOf()
 
-        navigate(`/dogovor?date1=${milisec1}&date2=${milisec2}&date3=${milisec3}`)
+        navigate(`/dogovor?date1=${milisec1}&date2=${milisec2}&date3=${milisec3}&date4=${JSON.stringify(inputsSovmest)}`)
     }
     return (
         <div className={s.abs}>
@@ -149,7 +148,10 @@ export default function Main() {
                                 </div>
                                 <div className={s.buttonContainer}>
                                     {inputsSovmest.map(it => (
-                                        <InputDate className={s.date} label='Дата рождения' value={it.value} onChange={(e,) => handleInputChange(it.id, e.target.value)} />
+                                        <InputDate className={s.date} label='Дата рождения' value={it.value} onChange={(e) => {
+                                            console.log(e)
+                                            handleInputChange(it.id, e)
+                                        }} />
                                     ))}
                                     <Button text='Рассчитать' onClick={handleSubmitSovmestimost} />
                                     <div onClick={addInput} className={s.addInputBtn}>+ Добавить дату</div>
@@ -180,7 +182,7 @@ export default function Main() {
                                     </div>
                                     <div className={s.buttonContainer}>
                                         {inputsDog.map(it => (
-                                            <InputDate className={s.date} label='Дата рождения' value={it.value} onChange={(e,) => handleInputChangeDog(it.id, e.target.value)} />
+                                            <InputDate className={s.date} label='Дата рождения' value={it.value} onChange={(e,) => handleInputChangeDog(it.id, e)} />
                                         ))}
                                         <Button text='Рассчитать' onClick={handleSubmitDogovor} />
                                         <div onClick={addInputDog} className={s.addInputBtn}>+ Добавить дату</div>

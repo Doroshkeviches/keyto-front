@@ -47,6 +47,8 @@ const MainPage = React.lazy(() => import("app/main"));
 const PersonalPage = React.lazy(() => import("app/personal"));
 const SovmestimostPage = React.lazy(() => import("app/sovmestimost"));
 const DogovorPage = React.lazy(() => import("app/dogovor"));
+const ProfilePage = React.lazy(() => import("app/profile"));
+
 
 
 
@@ -64,7 +66,7 @@ const AppRoutes = () => {
       {/* TODO CHANGe to private route */}
       <Route path={"/sovmestimost/*"} element={<PrivateRoute element={SovmestimostPage} />} />
       <Route path={"/dogovor/*"} element={<PrivateRoute element={DogovorPage} />} />
-
+      <Route path={"/profile/*"} element={<PrivateRoute element={ProfilePage} />} />
       {/* PRIVATE */}
       <Route path={"/*"} element={<PrivateRoute element={MainPage} />} />
 

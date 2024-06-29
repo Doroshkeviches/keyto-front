@@ -23,6 +23,10 @@
 //COLORS
 $color-dark: #481C6A;
 $color-light: #F5F3EF;
+$color-dark-secondary: #2C1142;
+
+
+
 
 
 
@@ -142,6 +146,7 @@ select {
   margin-bottom: 24px;
   line-height: 30px;
   font-size: 24px;
+  color: $color-dark-secondary;
 
   @media (max-width: 1440px) {
     font-size: 18px;

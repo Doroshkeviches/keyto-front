@@ -27,6 +27,23 @@ export default function Dogovor() {
     const param = searchParams.get('date1')
     const param2 = searchParams.get('date2')
     const param3 = searchParams.get('date3')
+    const param4 = searchParams.get("date4")
+    const arrayOfDates = JSON.parse(param4 || '')
+    const sumOfDaysInDopInputs = arrayOfDates.map((it: { id: number, value: Date }) => {
+      const date = new Date(it.value)
+      return date.getDay()
+    }).reduce((acc: any, number: any) => acc + number, 0)
+  
+    const sumOfMonthInDopInputs = arrayOfDates.map((it: { id: number, value: Date }) => {
+      const date = new Date(it.value)
+      console.log(date)
+      return date.getMonth() + 1
+    }).reduce((acc: any, number: any) => acc + number, 0)
+  
+    const sumOfYearsInDopInputs = arrayOfDates.map((it: { id: number, value: Date }) => {
+      const date = new Date(it.value)
+      return date.getFullYear()
+    }).reduce((acc: any, number: any) => acc + number, 0)
     if (!param || !param2 || !param3) return null
     const date = new Date(+param)
     const date2 = new Date(+param2)
@@ -41,10 +58,13 @@ export default function Dogovor() {
     const year = date.getFullYear()
     const month = date.getMonth() + 1
     const currentYear = new Date().getFullYear()
-    const sumOfDays = sumOneDigits(day + day2 + day3)
-    const missionNumb = sumDigits(day + day2 + day3, month + month2 + month3, year + year2 + year3)
+    const sumOfDays = sumOneDigits(day + day2 + day3 + sumOfDaysInDopInputs)
+    const sumOfMonth = sumOneDigits(month + month2 + month3 + sumOfMonthInDopInputs)
+    const sumOfYears = sumOneDigits(year + year2 + year3 + sumOfYearsInDopInputs)
+
+    const missionNumb = sumDigits(sumOfDays, sumOfMonth, sumOfYears)
     const implementationNumber = sumDigits(missionNumb, sumOfDays, 0)
-    const personalYear = sumDigits(day + day2 + day3, month + month2 + month3, currentYear)
+    const personalYear = sumDigits(sumOfDays, sumOfMonth, currentYear)
     const itogNumber = sumDigits(implementationNumber, missionNumb, sumOfDays)
     const date1Conv = dateConverter(date)
     const date2Conv = dateConverter(date2)

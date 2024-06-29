@@ -9,7 +9,7 @@ export type Value = ValuePiece;
 interface Props {
     onChange?: (e: any) => void,
     value: Value,
-    label: string,
+    label?: string,
     className?: string
 }
 export default function InputDate(props: Props) {
@@ -17,7 +17,7 @@ export default function InputDate(props: Props) {
     const { onChange, value, label, className } = props
     return (
         <div className={clsx(className, s.container)}>
-            <p className={s.label}>{label}</p>
+            {label && <p className={s.label}>{label}</p>}
             <DatePicker
                 dayPlaceholder='ДД'
                 monthPlaceholder='MM'
