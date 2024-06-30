@@ -46,7 +46,6 @@ export default function SovmestimostPage() {
 
   const sumOfMonthInDopInputs = arrayOfDates.map((it: { id: number, value: Date }) => {
     const date = new Date(it.value)
-    console.log(date)
     return date.getMonth() + 1
   }).reduce((acc: any, number: any) => acc + number, 0)
 
@@ -77,7 +76,6 @@ export default function SovmestimostPage() {
   if (!data.length) {
     return <></>
   }
-  console.log(data)
   return (
     <>
       <div className={s.container}>

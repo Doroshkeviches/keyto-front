@@ -13,7 +13,6 @@ repository.interceptors.request.use(
         Authorization: `Bearer ${access_token}`,
       } as AxiosRequestHeaders;
     }
-    console.log(access_token)
     return config;
   },
   (error: AxiosError) => {

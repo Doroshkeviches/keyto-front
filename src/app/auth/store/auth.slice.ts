@@ -29,6 +29,9 @@ export const authSlice = createSlice({
     setReduxEmail: (state, { payload }) => {
       state.email = payload;
     },
+    removeToken: (state) => {
+      state.session = null;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -74,4 +77,4 @@ export const authSlice = createSlice({
   },
 });
 
-export const { setReduxEmail } = authSlice.actions;
+export const { setReduxEmail, removeToken } = authSlice.actions;

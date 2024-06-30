@@ -36,7 +36,6 @@ export default function Dogovor() {
   
     const sumOfMonthInDopInputs = arrayOfDates.map((it: { id: number, value: Date }) => {
       const date = new Date(it.value)
-      console.log(date)
       return date.getMonth() + 1
     }).reduce((acc: any, number: any) => acc + number, 0)
   

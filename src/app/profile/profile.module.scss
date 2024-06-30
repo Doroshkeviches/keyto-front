@@ -54,12 +54,18 @@
 }
 
 .edit {
-    width: 50%;
+    width: 30%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 12px;
     margin-top: 30px;
+    @media (max-width: 1024px) {
+        width: 50%;
+    }
+    @media (max-width: 768px) {
+        width: 80%;
+    }
 }
 
 .data {
@@ -164,4 +170,8 @@
     align-items: center;
     justify-content: center;
     padding: 14px;
+}
+.saveButton{
+    background-color: $color-dark;
+    color: white;
 }

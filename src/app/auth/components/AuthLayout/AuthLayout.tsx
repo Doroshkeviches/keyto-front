@@ -1,12 +1,16 @@
 import React, { ReactNode, useEffect } from 'react'
 import s from './style.module.scss'
+import { useAppDispatch } from 'storeTypes'
+import { removeToken } from 'app/auth/store/auth.slice'
 interface Props {
     children: ReactNode,
     title: string
 }
 export default function AuthLayout({ children, title }: Props) {
+    const dispatch = useAppDispatch()
     useEffect(() => {
         localStorage.removeItem('access-token')
+        dispatch(removeToken())
     }, [])
     return (
         <div className={s.layout}>

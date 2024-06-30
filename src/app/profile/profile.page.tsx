@@ -81,23 +81,30 @@ export default function Profile() {
             <div className={s.header}>
                 <div className={s.logoWithButtons}>
                     <Link to={'/'} className={s.button}>Назад</Link>
-                    <div onClick={() => setIsEdit(prev => !prev)} className={clsx(s.button, s.redTop)}>Редактировать</div>
-                </div>
-                {isEdit ? <div className={s.edit}>
-                    <Input placeholder='Имя' value={name} onChange={(e) => setName(e.target.value)} />
-                    <InputDate value={date} onChange={setDate} />
-                    <div onClick={handleSave} className={s.button}>Сохранить</div>
+                    <div style={{
+                        display: isEdit ? 'none' : 'flex'
+                    }} onClick={() => setIsEdit(prev => !prev)} className={clsx(s.button, s.redTop)}>Редактировать</div>
+                    <div style={{
+                        display: isEdit ? 'flex' : 'none'
+                    }} onClick={handleSave} className={clsx(s.button,s.saveButton)}>Сохранить</div>
 
                 </div>
-                    :
-                    <div className={s.data}>
-                        <ProfileIcon />
-                        <div className={clsx('title', s.title)}>{user?.name || 'Введите Имя'}</div>
-                        <div className={s.date}>{converDate(user?.date) || 'Введите дату рождения'}</div>
-                        <div onClick={() => setIsEdit(prev => !prev)} className={clsx(s.button, s.redBot)}>Редактировать</div>
+                <div>
+                    <ProfileIcon />
+                    {isEdit ? <div className={s.edit}>
+
+                        <Input placeholder='Имя' value={name} onChange={(e) => setName(e.target.value)} />
+                        <InputDate value={date} onChange={setDate} />
 
                     </div>
-                }
+                        :
+                        <div className={s.data}>
+                            <div className={clsx('title', s.title)}>{user?.name || 'Введите Имя'}</div>
+                            <div className={s.date}>{converDate(user?.date) || 'Введите дату рождения'}</div>
+
+                        </div>
+                    }
+                </div>
             </div>
             {user?.date &&
                 <div className={s.main}>

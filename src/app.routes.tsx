@@ -1,13 +1,18 @@
 import { authSelector } from "app/auth/store/auth.selectors";
+import { getUser } from "app/main/store/user.actions";
 import Footer from "components/Footer/Footer";
 import Header from "components/page-header.comp";
-import React, { FC, Suspense } from "react";
+import React, { FC, Suspense, useEffect } from "react";
 import { Navigate, Routes, Route } from "react-router-dom";
-import { useAppSelector } from "storeTypes";
+import { useAppDispatch, useAppSelector } from "storeTypes";
 
 // ======= private route ======= //
 const PrivateRoute: FC<{ element: any }> = ({ element: Element }) => {
   const { session } = useAppSelector(authSelector)
+  const dispatch = useAppDispatch()
+  useEffect(() => {
+    dispatch(getUser())
+  }, [])
   return session ? (
     <Suspense fallback={<div />}>
       <Header />

@@ -1,7 +1,14 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import s from './style.module.scss'
+import { useAppSelector } from "storeTypes";
+import { userSelector } from "app/main/store/user.selectors";
+import clsx from "clsx";
+
 const Header: FC = () => {
+  const { user } = useAppSelector(userSelector)
+  const [isOpen, setIsOpen] = useState(false)
+  console.log(user)
   return (
     <header className={s.header}>
       <Link to='/'>
@@ -10,6 +17,20 @@ const Header: FC = () => {
         </svg>
 
       </Link>
+      <div onClick={() => setIsOpen(prev => !prev)} className={s.dropdown}>
+        <div>{user?.name}</div>
+        <div>
+          <svg width="47" height="47" viewBox="0 0 47 47" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M23.5 0C10.528 0 0 10.528 0 23.5C0 36.472 10.528 47 23.5 47C36.472 47 47 36.472 47 23.5C47 10.528 36.472 0 23.5 0ZM23.5 9.4C28.0355 9.4 31.725 13.0895 31.725 17.625C31.725 22.1605 28.0355 25.85 23.5 25.85C18.9645 25.85 15.275 22.1605 15.275 17.625C15.275 13.0895 18.9645 9.4 23.5 9.4ZM23.5 42.3C18.7295 42.3 13.0895 40.373 9.071 35.532C13.0425 32.43 18.048 30.55 23.5 30.55C28.952 30.55 33.9575 32.43 37.929 35.532C33.9105 40.373 28.2705 42.3 23.5 42.3Z" fill="#512D6D" />
+          </svg>
+
+        </div>
+      </div>
+      <div className={clsx(s.dropdownContainer, !isOpen && s.hide)}>
+        <Link onClick={() => setIsOpen(false)} to={'/profile'}>Мой профиль</Link>
+        <Link onClick={() => setIsOpen(false)} to={'/auth/signin'}>Выйти</Link>
+
+      </div>
     </header>
   );
 };
